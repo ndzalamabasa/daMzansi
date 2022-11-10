@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "A board game about south africa",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "start": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",

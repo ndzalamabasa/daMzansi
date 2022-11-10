@@ -6,4 +6,9 @@ module.exports = {
     path: path.resolve(__dirname, 'public/js'),
     filename: 'main.js',
   },
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 600,
+    ignored: '**/node_modules',
+  },
 };

@@ -1,3 +1,9 @@
+---
+title: 'daMzansi'
+permalink: /
+layout: default
+---
+
 # daMzansi
 
 The daMzansi board game is about South African concepts and facts.

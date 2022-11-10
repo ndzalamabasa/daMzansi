@@ -1,7 +1,4 @@
 # daMzansi
-daMzansi board game
-
-## About the game
 
 The daMzansi board game is about South African concepts and facts.
 The game is aimed at educating people (South Africas and non-South Africans) about everything concerning South Africa, from languages, cultures, history and other things.

@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "jasmine",
-    "start": "nodemon src/app.js",
-    "build": "webpack --mode production"
+    "server": "nodemon src/app.js",
+    "build": "webpack --mode production",
+    "build css": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch"
   },
   "repository": {
     "type": "git",

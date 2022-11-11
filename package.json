@@ -8,7 +8,8 @@
     "test": "jasmine",
     "server": "nodemon src/app.js",
     "build": "webpack --mode production",
-    "build css": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch"
+    "build-css": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run build\" \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/ndzalamabasa/daMzansi#readme",
   "devDependencies": {
+    "concurrently": "^7.5.0",
     "jasmine": "^4.5.0",
     "jsdom": "^20.0.2",
     "nodemon": "^2.0.20",

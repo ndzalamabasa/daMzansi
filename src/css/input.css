@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .main-container {
-  height: calc(100% - 8rem);
+  height: calc(100% - 2rem);
 }
 
 .pop-up {

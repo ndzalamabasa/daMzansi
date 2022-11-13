@@ -513,40 +513,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.container {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
 .static {
   position: static;
 }
@@ -563,10 +529,6 @@ video {
   margin: auto;
 }
 
-.mt-16 {
-  margin-top: 4rem;
-}
-
 .flex {
   display: flex;
 }
@@ -575,16 +537,12 @@ video {
   height: 100vh;
 }
 
-.h-16 {
-  height: 4rem;
-}
-
 .h-full {
   height: 100%;
 }
 
-.h-20 {
-  height: 5rem;
+.h-16 {
+  height: 4rem;
 }
 
 .w-10\/12 {
@@ -595,10 +553,6 @@ video {
   width: 100%;
 }
 
-.w-4\/5 {
-  width: 80%;
-}
-
 .w-24 {
   width: 6rem;
 }
@@ -607,41 +561,9 @@ video {
   width: 100vw;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
-}
-
-.w-1\/4 {
-  width: 25%;
-}
-
-.w-36 {
-  width: 9rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-14 {
-  width: 3.5rem;
-}
-
-.w-20 {
-  width: 5rem;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
 .min-w-min {
   min-width: -moz-min-content;
   min-width: min-content;
-}
-
-.max-w-xl {
-  max-width: 36rem;
 }
 
 .max-w-xs {
@@ -650,10 +572,6 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.flex-col {
-  flex-direction: column;
 }
 
 .items-center {
@@ -668,87 +586,25 @@ video {
   justify-content: space-around;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
 .rounded-xl {
   border-radius: 0.75rem;
-}
-
-.rounded-3xl {
-  border-radius: 1.5rem;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.border-slate-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(226 232 240 / var(--tw-border-opacity));
-}
-
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.bg-sky-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
-}
-
-.bg-\[url\(\'\/assets\/images\/da-mzansi-bg\.svg\'\)\] {
-  background-image: url('/assets/images/da-mzansi-bg.svg');
-}
-
-.bg-\[url\(\'\/assets\/images\/damzansi-bg\.svg\'\)\] {
-  background-image: url('/assets/images/damzansi-bg.svg');
 }
 
 .bg-\[url\(\'\/assets\/images\/btn-primary-bg\.svg\'\)\] {
   background-image: url('/assets/images/btn-primary-bg.svg');
 }
 
+.bg-\[url\(\'\/assets\/images\/damzansi-bg\.svg\'\)\] {
+  background-image: url('/assets/images/damzansi-bg.svg');
+}
+
 .bg-cover {
   background-size: cover;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
-.p-24 {
-  padding: 6rem;
-}
-
-.p-10 {
-  padding: 2.5rem;
-}
-
-.p-16 {
-  padding: 4rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.py-36 {
-  padding-top: 9rem;
-  padding-bottom: 9rem;
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .py-16 {
@@ -759,11 +615,6 @@ video {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .py-2\.5 {
@@ -781,31 +632,8 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.pt-16 {
-  padding-top: 4rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
-}
-
 .text-center {
   text-align: center;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-4xl {
@@ -818,22 +646,17 @@ video {
   line-height: 2.25rem;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-slate-200 {
   --tw-text-opacity: 1;
   color: rgb(226 232 240 / var(--tw-text-opacity));
-}
-
-.text-slate-900 {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
 .transition-all {
@@ -865,10 +688,4 @@ video {
   --tw-scale-x: .95;
   --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@media (min-width: 640px) {
-  .sm\:w-40 {
-    width: 10rem;
-  }
 }

@@ -7,15 +7,16 @@ avatars.forEach((avatar) => {
     const src = target.getAttribute('src');
     const lastSlash = src.lastIndexOf('/');
     const lastPeriod = src.lastIndexOf('.');
-    const avatarName = src.slice(lastSlash + 1, lastPeriod);
+    let avatarName = src.slice(lastSlash + 1, lastPeriod);
     const avatarExt = src.slice(lastPeriod + 1);
-    console.log(src);
-    console.log(!src.includes('selected'));
 
     if (!src.includes('selected')) {
-      const avatarSrc = `${avatarPath}${avatarName}-selected.${avatarExt}`;
-      target.setAttribute('src', avatarSrc);
-      console.log(avatarSrc);
+      const selectedAvatar = `${avatarPath}${avatarName}-selected.${avatarExt}`;
+      target.setAttribute('src', selectedAvatar);
+    } else {
+      avatarName = avatarName.replace('-selected', '');
+      const defaultAvatar = `${avatarPath}${avatarName}.${avatarExt}`;
+      target.setAttribute('src', defaultAvatar);
     }
   });
 });

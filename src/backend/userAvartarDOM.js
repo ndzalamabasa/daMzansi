@@ -6,7 +6,7 @@ const renderAvatarChoices = () => {
   avatars.forEach((logo) => {
     avatarList.innerHTML =
       avatarList.innerHTML +
-      `<li>
+      `<li class="avatarList">
         <button>
             <img src='../src/backend/avatars/${logo}.png' alt="logo" id="logoImage"/>
         </button>

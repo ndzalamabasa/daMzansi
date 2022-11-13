@@ -556,9 +556,16 @@ video {
   text-align: center;
 }
 
-#logoImage {
+#avatarList {
   display: flex;
   flex-direction: row;
+}
+.avatarList {
+  margin-left: 10%;
+  width: 10%;
+}
+
+#logoImage {
   margin: 3rem;
-  width: 5%;
+  width: 80%;
 }

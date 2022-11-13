@@ -533,14 +533,6 @@ video {
   height: 4rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.w-full {
-  width: 100%;
-}
-
 .w-4\/5 {
   width: 80%;
 }
@@ -551,14 +543,6 @@ video {
 
 .w-11\/12 {
   width: 91.666667%;
-}
-
-.w-28 {
-  width: 7rem;
-}
-
-.w-32 {
-  width: 8rem;
 }
 
 .max-w-xl {
@@ -575,10 +559,6 @@ video {
 
 .justify-center {
   justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
 }
 
 .justify-evenly {
@@ -614,6 +594,10 @@ video {
 
 .bg-\[url\(\'\/assets\/images\/da-mzansi-bg\.svg\'\)\] {
   background-image: url('/assets/images/da-mzansi-bg.svg');
+}
+
+.bg-\[url\(\'\/assets\/images\/damzansi-bg\.svg\'\)\] {
+  background-image: url('/assets/images/damzansi-bg.svg');
 }
 
 .bg-cover {

@@ -1,10 +1,8 @@
-class userAvatar {
-  constructor(userName, userEmail, userPassword, userAvatar) {
+export class UserProfile {
+  constructor(userName, userAvatar) {
     this.userName = userName
-    this.userEmail = userEmail
-    this.userPassword = userPassword
     this.userAvatar = userAvatar
   }
 }
 
-module.exports = userAvatar
+// module.exports = UserProfile

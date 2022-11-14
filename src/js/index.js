@@ -1,8 +1,9 @@
-import { UserProfile } from '../userAvatar.js'
+import { UserProfile } from './userAvatar.js'
 
 const avatars = document.querySelectorAll('.avatar')
 const avatarPath = './assets/images/avatars/'
 let user
+
 avatars.forEach((avatar) => {
   avatar.addEventListener('click', (e) => {
     const target = e.target
@@ -19,7 +20,6 @@ avatars.forEach((avatar) => {
         avatarName,
         `${avatarPath}${avatarName}.${avatarExt}`,
       )
-      console.log(user)
     } else {
       avatarName = avatarName.replace('-selected', '')
       const defaultAvatar = `${avatarPath}${avatarName}.${avatarExt}`

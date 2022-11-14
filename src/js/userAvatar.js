@@ -3,6 +3,7 @@ export class UserProfile {
     this.userName = userName
     this.userAvatar = userAvatar
   }
+  move(steps) {
+    return steps
+  }
 }
-
-// module.exports = UserProfile

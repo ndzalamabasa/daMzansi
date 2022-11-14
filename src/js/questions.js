@@ -243,4 +243,3 @@ export function questionReceiver(questionForUser) {
   }
   return result
 }
-console.log(questionReceiver(questions[0]))

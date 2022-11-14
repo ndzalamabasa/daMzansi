@@ -1,4 +1,4 @@
-const questions = {
+export const questions = {
   0: {
     question: 'Where is the largest hospital in the world located?',
     options: [
@@ -226,15 +226,21 @@ const questions = {
 
 export function questionReceiver(questionForUser) {
   let correctAnswer = ''
-
-  console.log(questionForUser.question)
+  const optionsArray = []
   questionForUser.options.forEach((option) => {
     let optionIndex = Object.keys(option)[0]
-    console.log(`${optionIndex}:${option[optionIndex[0]]}`)
+    optionsArray.push(option[optionIndex[0]])
     if (option.value === true) {
       correctAnswer = option
     }
   })
-  return [correctAnswer[Object.keys(correctAnswer)[0]]]
+  const steps = Math.floor(1 + Math.random() * 9)
+  const result = {
+    question: questionForUser.question,
+    options: optionsArray,
+    correctAnswer: correctAnswer[Object.keys(correctAnswer)[0]],
+    steps: steps,
+  }
+  return result
 }
 console.log(questionReceiver(questions[0]))

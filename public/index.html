@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./css/style.css" rel="stylesheet">
-  <title>Da Mzansi</title>
-</head>
-<body>
-  <div class="landing modal">
-    <p>Welcome to Da Mzansi, a platform that teaches you about South Africa.</p>
-    <a href="/login">Login</a>
-    <a href="/register">Register</a>
-  </div>
-
-  <script src="./js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>Da Mzansi</title>
+  </head>
+  <body class="h-screen">
+    <main class="main-container flex justify-center items-center">
+      <div class="w-10/12 m-auto py-10">
+        <div class="min-w-min max-w-xs m-auto">
+          <img
+            class="h-full w-full"
+            src="./assets/images/da-mzansi.png"
+            alt=""
+          />
+        </div>
+        <div id="avatars-selector" class="py-16">
+          <h1 class="text-center text-4xl font-bold">Pick your avater</h1>
+          <div id="popUpMessage"></div>
+          <div class="avatars">
+            <div class="avatars flex justify-around items-center py-24">
+              <div
+                class="w-24 hover:scale-90 transition-all duration-200 cursor-pointer"
+              >
+                <img
+                  class="avatar"
+                  src="./assets/images/avatars/rhino.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-24 hover:scale-90 transition-all duration-200 cursor-pointer"
+              >
+                <img
+                  class="avatar"
+                  src="./assets/images/avatars/tiger.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-24 hover:scale-90 transition-all duration-200 cursor-pointer"
+              >
+                <img
+                  class="avatar"
+                  src="./assets/images/avatars/bufallo.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-24 hover:scale-90 transition-all duration-200 cursor-pointer"
+              >
+                <img
+                  class="avatar"
+                  src="./assets/images/avatars/elephant.svg"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-24 hover:scale-90 transition-all duration-200 cursor-pointer"
+              >
+                <img
+                  class="avatar"
+                  src="./assets/images/avatars/lion.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="play flex justify-center items-center">
+              <button
+                id="playButton"
+                class="bg-[url('/assets/images/btn-primary-bg.svg')] bg-cover rounded-xl py-2.5 px-24 text-3xl font-semibold text-slate-200 hover:scale-95 transition-all duration-200"
+              >
+                PLAY
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="w-screen fixed -bottom-8 bg-[url('/assets/images/damzansi-bg.svg')] h-16 bg-cover"
+    ></footer>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

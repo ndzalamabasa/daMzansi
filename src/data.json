@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "question": "Where is the largest hospital in the world located?",
+    "options": ["Kimberly", "Soweto", "Cape Town", "Sandton"],
+    "answer": "Soweto"
+  },
+  {
+    "id": 2,
+    "question": "True or False, Table mountain's high is deeper than Kimberly Hole's Deep",
+    "options": ["True", "False"],
+    "answer": "False"
+  },
+  {
+    "id": 3,
+    "question": "What are traffic lights called is South Africa",
+    "options": ["Lights", "Machines", "Stops", "none"],
+    "answer": "none"
+  },
+  {
+    "id": 4,
+    "question": "What was mandels cell number in prision?",
+    "options": ["466", "67", "27", "none of the above"],
+    "answer": "466"
+  },
+  {
+    "id": 5,
+    "question": "South Africa is often referred to as 'what sort of nation' which describes the country's multicultural diversity?",
+    "options": [
+      "Democracy",
+      "Free Nation",
+      "Rainbow Nation",
+      "none of the above"
+    ],
+    "answer": "Rainbow Nation"
+  },
+  {
+    "id": 6,
+    "question": "South Africa accounts for 80% of the world's production of which precious metal?",
+    "options": ["Gold", "Silver", "Diamond", "Platinum"],
+    "answer": "Platinum"
+  },
+  {
+    "id": 7,
+    "question": "Durban, the busiest port in South Africa, is on which ocean?",
+    "options": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Frank Ocean",
+      "none of the above"
+    ],
+    "answer": "Indian Ocean"
+  },
+  {
+    "id": 8,
+    "question": "When did Zulu people form a powerful state under the Shaka monarch",
+    "options": ["1818", "1942", "1961", "none of the above"],
+    "answer": "1818"
+  },
+  {
+    "id": 9,
+    "question": "Which writer was the first to be awarded the Booker Prize twice?",
+    "options": ["J.V Riebeck", "N.R Mandela", "S.Biko", "J.M Coetzee"],
+    "answer": "J.M Coetzee"
+  },
+  {
+    "id": 10,
+    "question": "The First Boer War was fought from 1880 to 1881 between Britain and the South African Republic; which country was victorious?",
+    "options": ["British", "The South African"],
+    "answer": "The South African"
+  },
+  {
+    "id": 11,
+    "question": "Which rocky headland in Western Cape is the geographic southern tip of Africa?",
+    "options": ["Cape Town", "Madagascar", "Khayelisha", "Cape Agulhas"],
+    "answer": "Cape Agulhas"
+  },
+  {
+    "id": 12,
+    "question": "The Kruger National Park contains the 'Big 5' of wild animals; which five animals make up this 'Big 5'?",
+    "options": [
+      "Lions, cheetars, rhinos, elephants and buffalos",
+      "Springboks, leopards, rhinos, elephants and buffalos",
+      "Lions, leopards, rhinos, Springboks and buffalos",
+      "Tigers, leopards, rhinos, elephants and buffalos"
+    ],
+    "answer": "Lions, cheetars, rhinos, elephants and buffalos"
+  },
+  {
+    "id": 13,
+    "question": "True or False , South Africa is the only country in the world to have hosted the Football, Rugby and Cricket World Cups?",
+    "options": ["True", "False"],
+    "answer": "True"
+  },
+  {
+    "id": 14,
+    "question": "Which South African won the Nobel Peace Prize in 1984?",
+    "options": [
+      "Whoopie Goldberg",
+      "Desmond Tutu",
+      "Nelson Mandela",
+      "Steve Biko"
+    ],
+    "answer": "Desmond Tutu"
+  },
+  {
+    "id": 15,
+    "question": "Who was the leader of South Africa from 1978 to 1989?",
+    "options": ["WF deKlerk", "Jan Van Portgier", "P W Borter", "P J Powers"],
+    "answer": "P W Borter"
+  },
+  {
+    "id": 16,
+    "question": "South African black population is divided into four major ethnic groups; Name Them",
+    "options": [
+      "Nguni,Sotho,Shangaan-Tsonga,Venda",
+      "Nguni, Tswana,Xhosa,Shangaan-Pedi",
+      "Nguni,Sotho, Shangaan-Venda, Tsonga",
+      "none of the above"
+    ],
+    "answer": "Nguni,Sotho,Shangaan-Tsonga,Venda"
+  }
+]

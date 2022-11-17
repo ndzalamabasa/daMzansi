@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: {
+    main: './src/js/index.js',
+    game: './src/js/game.js',
+  },
   output: {
+    filename: '[name].js',
     path: path.resolve(__dirname, 'public/js'),
-    filename: 'main.js',
   },
   watch: true,
   watchOptions: {

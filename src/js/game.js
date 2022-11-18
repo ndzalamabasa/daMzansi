@@ -82,7 +82,7 @@ function rollDice() {
 
 function results(parentElement, moves) {
   const results = document.createElement('h3');
-  results.classList.add('text-4xl', 'font-bold');
+  results.classList.add('text-3xl', 'font-bold');
   moves === 1
     ? (results.innerHTML = `You got ${moves} move`)
     : (results.innerHTML = `You got ${moves} moves`);

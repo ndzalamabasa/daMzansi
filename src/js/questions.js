@@ -222,24 +222,24 @@ export const questions = {
       { d: 'none of the above', value: false },
     ],
   },
-}
+};
 
-export function questionReceiver(questionForUser) {
-  let correctAnswer = ''
-  const optionsArray = []
-  questionForUser.options.forEach((option) => {
-    let optionIndex = Object.keys(option)[0]
-    optionsArray.push(option[optionIndex[0]])
-    if (option.value === true) {
-      correctAnswer = option
-    }
-  })
-  const steps = Math.floor(1 + Math.random() * 9)
-  const result = {
-    question: questionForUser.question,
-    options: optionsArray,
-    correctAnswer: correctAnswer[Object.keys(correctAnswer)[0]],
-    steps: steps,
-  }
-  return result
-}
+// export function questionReceiver(questionForUser) {
+//   let correctAnswer = ''
+//   const optionsArray = []
+//   questionForUser.options.forEach((option) => {
+//     let optionIndex = Object.keys(option)[0]
+//     optionsArray.push(option[optionIndex[0]])
+//     if (option.value === true) {
+//       correctAnswer = option
+//     }
+//   })
+//   const steps = Math.floor(1 + Math.random() * 9)
+//   const result = {
+//     question: questionForUser.question,
+//     options: optionsArray,
+//     correctAnswer: correctAnswer[Object.keys(correctAnswer)[0]],
+//     steps: steps,
+//   }
+//   return result
+// }

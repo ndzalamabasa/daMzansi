@@ -3,12 +3,17 @@ const userAvatar = new URLSearchParams(window.location.search).get('avatar');
 const board = document.getElementById('board');
 const cardsPath = './assets/images/cards/';
 const cardsArray = [];
+const popUpContainer = document.getElementById('pop-up-container');
+const popUp = document.getElementById('pop-up');
+const rollDiceButton = document.getElementById('roll-dice');
 
 // fetch('data.json')
 //   .then((response) => response.json())
 //   .then((data) => {
 //     addQuestionsToBoard(data);
 //   });
+
+rollDiceButton.addEventListener('click', rollDice);
 
 const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
 
@@ -64,3 +69,28 @@ addCardsToBoard(cardsArray);
 //     board.appendChild(questionDiv);
 //   });
 // }
+
+function showPopUp() {
+  popUpContainer.classList.remove('hidden');
+}
+
+function hidePopUp() {
+  popUpContainer.classList.add('hidden');
+}
+
+function rollDice() {
+  showPopUp();
+  const dice = document.createElement('img');
+  dice.setAttribute('src', './assets/images/dice.svg');
+  dice.classList.add('h-1/4', 'w-1/4', 'animate-spin');
+  popUp.appendChild(dice);
+
+  setTimeout(() => {
+    popUp.innerHTML = '';
+    const diceNumber = Math.floor(Math.random() * 6) + 1;
+    const diceNumberDiv = document.createElement('div');
+    diceNumberDiv.classList.add('text-6xl', 'font-bold');
+    diceNumberDiv.innerHTML = diceNumber;
+    popUp.appendChild(diceNumberDiv);
+  }, 2000);
+}

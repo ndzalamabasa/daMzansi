@@ -8,11 +8,26 @@
     <title>Da Mzansi</title>
   </head>
   <body>
-    <main>
+    <main class="p-8">
+      <button
+        id="roll-dice"
+        class="bg-[url('/assets/images/btn-primary-bg.svg')] bg-cover rounded-xl py-2.5 px-10 mb-2 text-xl font-semibold text-slate-200 hover:scale-95 transition-all duration-200"
+      >
+        Roll Dice
+      </button>
       <div
-        class="board bg-green-800 grid grid-cols-10 grid-rows-5 gap-3 rounded-xl p-8 m-8 h-screen"
+        class="board bg-green-800 grid grid-cols-10 grid-rows-5 gap-3 rounded-xl p-8 h-screen"
         id="board"
       ></div>
+      <div
+        id="pop-up-container"
+        class="pop-up absolute w-screen top-0 left-0 h-screen shadow-lg hidden"
+      >
+        <div
+          class="pop-up-card flex flex-col justify-center items-center top-0 left-0 w-1/2 h-1/2 bg-slate-200 rounded-xl translate-y-1/2 translate-x-1/2"
+          id="pop-up"
+        ></div>
+      </div>
     </main>
     <script src="./js/game.js"></script>
   </body>

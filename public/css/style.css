@@ -667,6 +667,10 @@ video {
   height: 25%;
 }
 
+.h-2\/4 {
+  height: 50%;
+}
+
 .w-3\/4 {
   width: 75%;
 }
@@ -711,6 +715,10 @@ video {
   width: 25%;
 }
 
+.w-2\/4 {
+  width: 50%;
+}
+
 .min-w-min {
   min-width: -moz-min-content;
   min-width: min-content;
@@ -744,6 +752,16 @@ video {
   animation: spin 1s linear infinite;
 }
 
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -770,6 +788,10 @@ video {
 
 .justify-around {
   justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
 }
 
 .gap-3 {
@@ -802,12 +824,20 @@ video {
   background-image: url('/assets/images/damzansi-bg.svg');
 }
 
+.bg-\[url\(\"\/assets\/images\/btn-primary-bg\.svg\"\)\] {
+  background-image: url("/assets/images/btn-primary-bg.svg");
+}
+
 .bg-cover {
   background-size: cover;
 }
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .py-10 {

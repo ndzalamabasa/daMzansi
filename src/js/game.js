@@ -4,13 +4,13 @@ const board = document.getElementById('board');
 const cardsPath = './assets/images/cards/';
 const cardsArray = [];
 
-fetch('data.json')
-  .then((response) => response.json())
-  .then((data) => {
-    addQuestionsToBoard(data);
-  });
+// fetch('data.json')
+//   .then((response) => response.json())
+//   .then((data) => {
+//     addQuestionsToBoard(data);
+//   });
 
-const cardsLetters = ['E', 'D', 'C', 'B', 'A'];
+const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
 
 function createCards(letter, cardsArray) {
   for (let i = 1; i <= 10; i++) {
@@ -24,16 +24,19 @@ cardsLetters.forEach((letter) => {
 
 function addCardsToBoard(cardsArray) {
   board.innerHTML = '';
+  let id = 1;
   cardsArray.forEach((card) => {
     const cardDiv = document.createElement('div');
     const cardImage = document.createElement('img');
     const avatar = document.createElement('img');
     cardDiv.classList.add('card', 'h-28', 'w-28', 'rounded-lg', 'relative');
+    cardDiv.setAttribute('id', id);
     cardImage.setAttribute('src', card);
     avatar.setAttribute('src', userAvatar);
     avatar.classList.add('absolute', 'top-2.5', 'right-2.5', 'h-12', 'w-12');
     cardDiv.appendChild(cardImage);
     cardDiv.appendChild(avatar);
+    id++;
 
     board.appendChild(cardDiv);
   });

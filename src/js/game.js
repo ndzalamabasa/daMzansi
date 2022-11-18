@@ -72,6 +72,22 @@ function getQuestion(question) {
   questionDiv.appendChild(questionButton);
   popUp.appendChild(questionDiv);
   showPopUp();
+
+  questionButton.onclick = () => {
+    if (document.querySelector('input[name="question"]:checked')) {
+      const selectedOption = document.querySelector(
+        'input[name="question"]:checked'
+      ).nextSibling.innerHTML;
+      if (selectedOption === question.answer) {
+        alert('Correct!');
+        hidePopUp();
+      } else {
+        alert('Wrong!');
+      }
+    } else {
+      alert('Please select an option');
+    }
+  };
 }
 
 function createCards(letter, cardsArray) {

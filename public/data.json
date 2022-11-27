@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Where is the largest hospital in the world located?",
+    "question": "Where is Africa's largest hospital located?",
     "options": ["Kimberly", "Soweto", "Cape Town", "Sandton"],
     "answer": "Soweto"
   },
@@ -79,12 +79,12 @@
     "id": 12,
     "question": "The Kruger National Park contains the 'Big 5' of wild animals; which five animals make up this 'Big 5'?",
     "options": [
-      "Lions, cheetars, rhinos, elephants and buffalos",
+      "Lions, leopards, rhinos, elephants and buffalos",
       "Springboks, leopards, rhinos, elephants and buffalos",
       "Lions, leopards, rhinos, Springboks and buffalos",
-      "Tigers, leopards, rhinos, elephants and buffalos"
+      "Tigers, cheetars, rhinos, elephants and buffalos"
     ],
-    "answer": "Lions, cheetars, rhinos, elephants and buffalos"
+    "answer": "Lions, leopards, rhinos, elephants and buffalos"
   },
   {
     "id": 13,

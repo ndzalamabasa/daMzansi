@@ -32,12 +32,17 @@ function getQuestion(question) {
   const questionTitle = document.createElement('h3');
   questionTitle.classList.add('text-center');
   const optionsList = document.createElement('ul');
-  optionsList.classList.add('flex', 'flex-col', 'gap-2', 'mt-4', 'self-start');
+  optionsList.classList.add('flex', 'flex-col', 'gap-2', 'my-4', 'self-start');
 
   const questionButton = document.createElement('button');
 
-  questionDiv.classList.add('flex', 'flex-col', 'items-center');
-  questionTitle.classList.add('text-xl', 'font-bold', 'mb-2');
+  questionDiv.classList.add(
+    'flex',
+    'flex-col',
+    'items-center',
+    'justify-between'
+  );
+  questionTitle.classList.add('text-xl', 'font-bold', 'pb-4');
   questionButton.classList.add(
     'bg-[url("/assets/images/btn-primary-bg.svg")]',
     'bg-cover',
@@ -141,7 +146,7 @@ function rollDice() {
   showPopUp();
   const dice = document.createElement('img');
   dice.setAttribute('src', './assets/images/dice.svg');
-  dice.classList.add('h-1/4', 'w-1/4', 'animate-spin');
+  dice.classList.add('h-1/2', 'w-1/2', 'animate-spin');
   popUp.appendChild(dice);
 
   setTimeout(() => {

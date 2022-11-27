@@ -657,6 +657,10 @@ video {
   width: 7rem;
 }
 
+.w-3\/4 {
+  width: 75%;
+}
+
 .min-w-min {
   min-width: -moz-min-content;
   min-width: min-content;
@@ -732,6 +736,10 @@ video {
   gap: 0.5rem;
 }
 
+.self-start {
+  align-self: flex-start;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -773,6 +781,10 @@ video {
 
 .p-8 {
   padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .py-2\.5 {

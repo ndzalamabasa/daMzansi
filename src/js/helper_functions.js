@@ -1,6 +1,12 @@
 import { domElements } from './helper_objects.js';
 const { popUpContainer, popUp } = domElements;
 
+async function getQuestions() {
+  const response = await fetch('data.json');
+  const data = await response.json();
+  return data;
+}
+
 function showPopUp() {
   popUpContainer.classList.remove('hidden');
 }
@@ -30,4 +36,4 @@ function addCardsToBoard(cardsArray) {
   return cards;
 }
 
-export { showPopUp, hidePopUp, addCardsToBoard };
+export { getQuestions, showPopUp, hidePopUp, addCardsToBoard };

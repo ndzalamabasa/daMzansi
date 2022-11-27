@@ -1,6 +1,11 @@
 import { UserProfile } from './userAvatar.js';
 import { moveButton, cardsArray, avatar } from './game_controllers.js';
-import { showPopUp, hidePopUp, addCardsToBoard } from './helper_functions.js';
+import {
+  getQuestions,
+  showPopUp,
+  hidePopUp,
+  addCardsToBoard,
+} from './helper_functions.js';
 import { domElements } from './helper_objects.js';
 const { board, popUp, rollDiceButton } = domElements;
 const userName = new URLSearchParams(window.location.search).get('user');
@@ -126,11 +131,9 @@ function move(numberOfMoves) {
   document.getElementById(user.position).appendChild(avatar);
 
   setTimeout(() => {
-    fetch('data.json')
-      .then((response) => response.json())
-      .then((data) => {
-        addQuestionsToBoard(data);
-      });
+    getQuestions().then((data) => {
+      addQuestionsToBoard(data);
+    });
   }, 1500);
 }
 

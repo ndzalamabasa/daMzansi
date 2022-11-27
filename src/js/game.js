@@ -1,7 +1,7 @@
 import { UserProfile } from './userAvatar.js';
-// import { users } from './index.js'
 const userName = new URLSearchParams(window.location.search).get('user');
 const userAvatar = new URLSearchParams(window.location.search).get('avatar');
+const users = new URLSearchParams(window.location.search).get('list');
 const board = document.getElementById('board');
 const cardsPath = './assets/images/cards/';
 const cardsArray = [];
@@ -30,6 +30,9 @@ moveButton.innerHTML = 'Move';
 rollDiceButton.addEventListener('click', rollDice);
 
 const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
+console.log(users.split(','));
+userAvatar = users.split(',')[1].split(':')[1];
+
 function addQuestionsToBoard(data) {
   const questionIndex = Math.floor(Math.random() * data.length - 1);
   const question = data[questionIndex];
@@ -113,9 +116,6 @@ function getQuestion(question) {
         moveButton.onclick = () => {
           move(moves);
         };
-
-        // move(3);
-        // hidePopUp();
       } else {
         alert('Wrong!');
         hidePopUp();

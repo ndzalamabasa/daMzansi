@@ -5,9 +5,8 @@ const userAvatar = new URLSearchParams(window.location.search).get('avatar');
 const board = document.getElementById('board');
 const cardsPath = './assets/images/cards/';
 const cardsArray = [];
-const popUpContainer = document.getElementById('pop-up-container');
-const popUp = document.getElementById('pop-up');
-const rollDiceButton = document.getElementById('roll-dice');
+import { domElements } from './helper_objects';
+const { popUpContainer, popUp, rollDiceButton } = domElements;
 
 const moveButton = document.createElement('button');
 moveButton.setAttribute('id', 'moveAround');

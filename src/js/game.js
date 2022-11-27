@@ -6,7 +6,7 @@ const board = document.getElementById('board');
 const cardsPath = './assets/images/cards/';
 const cardsArray = [];
 import { domElements } from './helper_objects';
-const { popUpContainer, popUp, rollDiceButton } = domElements;
+const { popUp, rollDiceButton } = domElements;
 
 const moveButton = document.createElement('button');
 moveButton.setAttribute('id', 'moveAround');
@@ -159,16 +159,7 @@ function addCardsToBoard(cardsArray) {
 
 addCardsToBoard(cardsArray);
 
-function showPopUp() {
-  popUpContainer.classList.remove('hidden');
-}
-
 const user = new UserProfile(userName, avatar, 0);
-
-function hidePopUp() {
-  popUpContainer.classList.add('hidden');
-  popUp.innerHTML = '';
-}
 
 function move(numberOfMoves) {
   hidePopUp();

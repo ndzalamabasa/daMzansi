@@ -1,4 +1,9 @@
 const moveButton = document.createElement('button');
+const cardsPath = './assets/images/cards/';
+const cardsArray = [];
+const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
+const avatar = document.createElement('img');
+
 moveButton.setAttribute('id', 'moveAround');
 moveButton.classList.add(
   'bg-[url("/assets/images/btn-primary-bg.svg")]',
@@ -16,14 +21,12 @@ moveButton.classList.add(
 );
 moveButton.innerText = 'Move';
 
-const cardsPath = './assets/images/cards/';
-const cardsArray = [];
-const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
-
 cardsLetters.forEach((letter) => {
   for (let i = 1; i <= 10; i++) {
     cardsArray.push(`${cardsPath}${letter}${i}.svg`);
   }
 });
 
-export { moveButton, cardsArray };
+avatar.classList.add('absolute', 'top-2.5', 'right-2.5', 'h-12', 'w-12');
+
+export { moveButton, cardsArray, avatar };

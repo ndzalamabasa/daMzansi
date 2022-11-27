@@ -769,12 +769,12 @@ select {
   margin-top: 1rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 .flex {
@@ -940,10 +940,6 @@ select {
   border-radius: 0.5rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
-}
-
 .bg-green-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(22 101 52 / var(--tw-bg-opacity));
@@ -1039,11 +1035,6 @@ select {
 .text-slate-200 {
   --tw-text-opacity: 1;
   color: rgb(226 232 240 / var(--tw-text-opacity));
-}
-
-.text-pink-500 {
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
 }
 
 .shadow-lg {

@@ -1,4 +1,5 @@
 import { UserProfile } from './userAvatar.js'
+// import { users } from './index.js'
 const userName = new URLSearchParams(window.location.search).get('user')
 const userAvatar = new URLSearchParams(window.location.search).get('avatar')
 const board = document.getElementById('board')
@@ -11,7 +12,7 @@ const rollDiceButton = document.getElementById('roll-dice')
 rollDiceButton.addEventListener('click', rollDice)
 
 const cardsLetters = ['A', 'B', 'C', 'D', 'E']
-
+// console.log(users)
 function addQuestionsToBoard(data) {
   const questionIndex = Math.floor(Math.random() * data.length - 1)
   const question = data[questionIndex]

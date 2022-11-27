@@ -9,10 +9,27 @@ const popUpContainer = document.getElementById('pop-up-container');
 const popUp = document.getElementById('pop-up');
 const rollDiceButton = document.getElementById('roll-dice');
 
+const moveButton = document.createElement('button');
+moveButton.setAttribute('id', 'moveAround');
+moveButton.classList.add(
+  'bg-[url("/assets/images/btn-primary-bg.svg")]',
+  'bg-cover',
+  'rounded-xl',
+  'py-2.5',
+  'px-10',
+  'mt-4',
+  'text-xl',
+  'font-semibold',
+  'text-slate-200',
+  'hover:scale-95',
+  'transition-all',
+  'duration-200'
+);
+moveButton.innerHTML = 'Move';
+
 rollDiceButton.addEventListener('click', rollDice);
 
 const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
-// console.log(users)
 function addQuestionsToBoard(data) {
   const questionIndex = Math.floor(Math.random() * data.length - 1);
   const question = data[questionIndex];
@@ -27,7 +44,7 @@ function getQuestion(question) {
   const questionTitle = document.createElement('h3');
   questionTitle.classList.add('text-center');
   const optionsList = document.createElement('ul');
-  optionsList.classList.add('flex', 'flex-col', 'gap-2', 'mt-4');
+  optionsList.classList.add('flex', 'flex-col', 'gap-2', 'mt-4', 'self-start');
 
   const questionButton = document.createElement('button');
 
@@ -80,9 +97,25 @@ function getQuestion(question) {
         'input[name="question"]:checked'
       ).nextSibling.innerHTML;
       if (selectedOption === question.answer) {
-        alert('Correct!');
-        move(3);
-        hidePopUp();
+        questionDiv.removeChild(optionsList);
+        questionDiv.removeChild(questionButton);
+
+        questionTitle.innerHTML = "Congrats! You're moving up!";
+        const winImage = document.createElement('img');
+        const bonusMoves = questionTitle.cloneNode(true);
+        winImage.setAttribute('src', '/assets/images/win.svg');
+        winImage.classList.add('w-1/2');
+        questionDiv.appendChild(winImage);
+        const moves = getRandomNumber();
+        bonusMoves.innerHTML = `You got ${moves} moves!`;
+        questionDiv.appendChild(bonusMoves);
+        questionDiv.appendChild(moveButton);
+        moveButton.onclick = () => {
+          move(moves);
+        };
+
+        // move(3);
+        // hidePopUp();
       } else {
         alert('Wrong!');
         hidePopUp();
@@ -169,9 +202,13 @@ function rollDice() {
 
   setTimeout(() => {
     popUp.innerHTML = '';
-    const diceNumber = Math.floor(Math.random() * 6) + 1;
+    const diceNumber = getRandomNumber();
     results(popUp, diceNumber);
   }, 2000);
+}
+
+function getRandomNumber() {
+  return Math.floor(Math.random() * 6) + 1;
 }
 
 function results(parentElement, moves) {
@@ -190,24 +227,6 @@ function results(parentElement, moves) {
     'w-12'
   );
   resultAvatar.classList.add('h-2/4', 'w-2/4');
-
-  const moveButton = document.createElement('button');
-  moveButton.setAttribute('id', 'moveAround');
-  moveButton.classList.add(
-    'bg-[url("/assets/images/btn-primary-bg.svg")]',
-    'bg-cover',
-    'rounded-xl',
-    'py-2.5',
-    'px-10',
-    'mt-4',
-    'text-xl',
-    'font-semibold',
-    'text-slate-200',
-    'hover:scale-95',
-    'transition-all',
-    'duration-200'
-  );
-  moveButton.innerHTML = 'Move';
 
   parentElement.appendChild(resultAvatar);
   parentElement.appendChild(results);

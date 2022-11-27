@@ -2,29 +2,12 @@ import { UserProfile } from './userAvatar.js';
 const userName = new URLSearchParams(window.location.search).get('user');
 const userAvatar = new URLSearchParams(window.location.search).get('avatar');
 // const users = new URLSearchParams(window.location.search).get('list');
-const board = document.getElementById('board');
 const cardsPath = './assets/images/cards/';
 const cardsArray = [];
-import { domElements } from './helper_objects';
-const { popUp, rollDiceButton } = domElements;
-
-const moveButton = document.createElement('button');
-moveButton.setAttribute('id', 'moveAround');
-moveButton.classList.add(
-  'bg-[url("/assets/images/btn-primary-bg.svg")]',
-  'bg-cover',
-  'rounded-xl',
-  'py-2.5',
-  'px-10',
-  'mt-4',
-  'text-xl',
-  'font-semibold',
-  'text-slate-200',
-  'hover:scale-95',
-  'transition-all',
-  'duration-200'
-);
-moveButton.innerHTML = 'Move';
+import { domElements } from './helper_objects.js';
+const { board, popUp, rollDiceButton } = domElements;
+import { moveButton } from './game_controllers.js';
+import { showPopUp, hidePopUp } from './helper_functions.js';
 
 rollDiceButton.addEventListener('click', rollDice);
 

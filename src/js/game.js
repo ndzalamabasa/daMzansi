@@ -2,16 +2,14 @@ import { UserProfile } from './userAvatar.js';
 const userName = new URLSearchParams(window.location.search).get('user');
 const userAvatar = new URLSearchParams(window.location.search).get('avatar');
 // const users = new URLSearchParams(window.location.search).get('list');
-const cardsPath = './assets/images/cards/';
-const cardsArray = [];
+
 import { domElements } from './helper_objects.js';
 const { board, popUp, rollDiceButton } = domElements;
-import { moveButton } from './game_controllers.js';
+import { moveButton, cardsArray } from './game_controllers.js';
 import { showPopUp, hidePopUp, addCardsToBoard } from './helper_functions.js';
 
 rollDiceButton.addEventListener('click', rollDice);
 
-const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
 // console.log(users.split(','));
 // userAvatar = users.split(',')[1].split(':')[1];
 
@@ -107,16 +105,6 @@ function getQuestion(question) {
     }
   };
 }
-
-function createCards(letter, cardsArray) {
-  for (let i = 1; i <= 10; i++) {
-    cardsArray.push(`${cardsPath}${letter}${i}.svg`);
-  }
-}
-
-cardsLetters.forEach((letter) => {
-  createCards(letter, cardsArray);
-});
 
 const avatar = document.createElement('img');
 avatar.classList.add('absolute', 'top-2.5', 'right-2.5', 'h-12', 'w-12');

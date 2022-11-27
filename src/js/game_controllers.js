@@ -16,4 +16,14 @@ moveButton.classList.add(
 );
 moveButton.innerText = 'Move';
 
-export { moveButton };
+const cardsPath = './assets/images/cards/';
+const cardsArray = [];
+const cardsLetters = ['A', 'B', 'C', 'D', 'E'];
+
+cardsLetters.forEach((letter) => {
+  for (let i = 1; i <= 10; i++) {
+    cardsArray.push(`${cardsPath}${letter}${i}.svg`);
+  }
+});
+
+export { moveButton, cardsArray };

@@ -7,7 +7,7 @@ const cardsArray = [];
 import { domElements } from './helper_objects.js';
 const { board, popUp, rollDiceButton } = domElements;
 import { moveButton } from './game_controllers.js';
-import { showPopUp, hidePopUp } from './helper_functions.js';
+import { showPopUp, hidePopUp, addCardsToBoard } from './helper_functions.js';
 
 rollDiceButton.addEventListener('click', rollDice);
 
@@ -120,27 +120,11 @@ cardsLetters.forEach((letter) => {
 
 const avatar = document.createElement('img');
 avatar.classList.add('absolute', 'top-2.5', 'right-2.5', 'h-12', 'w-12');
+avatar.setAttribute('src', userAvatar);
 
-function addCardsToBoard(cardsArray) {
-  board.innerHTML = '';
-  let id = 1;
-
-  cardsArray.forEach((card) => {
-    const cardDiv = document.createElement('div');
-    const cardImage = document.createElement('img');
-
-    cardDiv.classList.add('card', 'h-28', 'w-28', 'rounded-lg', 'relative');
-    cardDiv.setAttribute('id', id);
-    cardImage.setAttribute('src', card);
-    avatar.setAttribute('src', userAvatar);
-    cardDiv.appendChild(cardImage);
-    id++;
-
-    board.appendChild(cardDiv);
-  });
-}
-
-addCardsToBoard(cardsArray);
+addCardsToBoard(cardsArray).forEach((card) => {
+  board.appendChild(card);
+});
 
 const user = new UserProfile(userName, avatar, 0);
 

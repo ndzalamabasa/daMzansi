@@ -19,7 +19,7 @@ avatars.forEach((avatar) => {
         avatarName,
         `${avatarPath}${avatarName}.${avatarExt}`,
       )
-      users.push(user)
+      users.push(`${user.userName}:${user.userAvatar}`)
       console.log(users)
     } else {
       avatarName = avatarName.replace('-selected', '')
@@ -35,7 +35,7 @@ const playButton = document.getElementById('playButton')
 
 playButton.addEventListener('click', () => {
   if (user) {
-    window.location.href = `./game.html?user=${user.userName}&avatar=${user.userAvatar}`
+    window.location.href = `./game.html?user=${user.userName}&avatar=${user.userAvatar}&list=${users}`
   } else {
     alert('Please select an avatar to continue')
   }

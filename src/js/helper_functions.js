@@ -1,4 +1,6 @@
 import { domElements } from './helper_objects.js';
+import { avatar, moveButton } from './game_controllers.js';
+
 const { popUpContainer, popUp } = domElements;
 
 async function getQuestions() {
@@ -13,6 +15,10 @@ function showPopUp() {
 
 function hidePopUp() {
   popUpContainer.classList.add('hidden');
+  resetPopUP();
+}
+
+function resetPopUP() {
   popUp.innerHTML = '';
 }
 
@@ -36,4 +42,44 @@ function addCardsToBoard(cardsArray) {
   return cards;
 }
 
-export { getQuestions, showPopUp, hidePopUp, addCardsToBoard };
+function getRandomNumber() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+function rollDiceResults(moveFunction) {
+  resetPopUP();
+  const moves = getRandomNumber();
+  const results = document.createElement('h3');
+  results.classList.add('text-3xl', 'font-bold');
+  moves === 1
+    ? (results.innerHTML = `You got ${moves} move`)
+    : (results.innerHTML = `You got ${moves} moves`);
+
+  const resultAvatar = avatar.cloneNode(true);
+  resultAvatar.classList.remove(
+    'absolute',
+    'top-2.5',
+    'right-2.5',
+    'h-12',
+    'w-12'
+  );
+  resultAvatar.classList.add('h-2/4', 'w-2/4');
+
+  popUp.appendChild(resultAvatar);
+  popUp.appendChild(results);
+  popUp.appendChild(moveButton);
+
+  moveButton.onclick = () => {
+    moveFunction(moves);
+  };
+}
+
+export {
+  getQuestions,
+  showPopUp,
+  hidePopUp,
+  addCardsToBoard,
+  resetPopUP,
+  getRandomNumber,
+  rollDiceResults,
+};

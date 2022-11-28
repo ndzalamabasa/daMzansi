@@ -5,6 +5,9 @@ import {
   showPopUp,
   hidePopUp,
   addCardsToBoard,
+  resetPopUP,
+  getRandomNumber,
+  rollDiceResults,
 } from './helper_functions.js';
 import { domElements } from './helper_objects.js';
 const { board, popUp, rollDiceButton } = domElements;
@@ -27,7 +30,7 @@ function addQuestionsToBoard(data) {
 }
 
 function getQuestion(question) {
-  popUp.innerHTML = '';
+  resetPopUP();
   const questionDiv = document.createElement('div');
   const questionTitle = document.createElement('h3');
   questionTitle.classList.add('text-center');
@@ -161,38 +164,6 @@ function rollDice() {
   popUp.appendChild(dice);
 
   setTimeout(() => {
-    popUp.innerHTML = '';
-    const diceNumber = getRandomNumber();
-    results(popUp, diceNumber);
+    rollDiceResults(move);
   }, 2000);
-}
-
-function getRandomNumber() {
-  return Math.floor(Math.random() * 6) + 1;
-}
-
-function results(parentElement, moves) {
-  const results = document.createElement('h3');
-  results.classList.add('text-3xl', 'font-bold');
-  moves === 1
-    ? (results.innerHTML = `You got ${moves} move`)
-    : (results.innerHTML = `You got ${moves} moves`);
-
-  const resultAvatar = avatar.cloneNode(true);
-  resultAvatar.classList.remove(
-    'absolute',
-    'top-2.5',
-    'right-2.5',
-    'h-12',
-    'w-12'
-  );
-  resultAvatar.classList.add('h-2/4', 'w-2/4');
-
-  parentElement.appendChild(resultAvatar);
-  parentElement.appendChild(results);
-  parentElement.appendChild(moveButton);
-
-  moveButton.onclick = () => {
-    move(moves);
-  };
 }

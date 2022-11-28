@@ -570,14 +570,6 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -727,6 +719,10 @@ video {
   align-self: flex-start;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -751,10 +747,6 @@ video {
 
 .bg-\[url\(\'\/assets\/images\/damzansi-bg\.svg\'\)\] {
   background-image: url('/assets/images/damzansi-bg.svg');
-}
-
-.bg-\[url\(\"\/assets\/images\/btn-primary-bg\.svg\"\)\] {
-  background-image: url("/assets/images/btn-primary-bg.svg");
 }
 
 .bg-cover {

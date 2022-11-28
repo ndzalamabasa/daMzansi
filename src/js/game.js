@@ -70,46 +70,61 @@ function getQuestion(question) {
   popUp.appendChild(questionDiv);
   showPopUp();
 
-  submitAnswer.onclick = (e) => {
-    checkAnswer(question, optionsList, questionDiv, e.target, questionTitle);
+  submitAnswer.onclick = () => {
+    const isAnswerCorrect = checkAnswer(question);
+
+    if (isAnswerCorrect) {
+      showCongratsMessage(
+        questionDiv,
+        optionsList,
+        submitAnswer,
+        questionTitle
+      );
+    } else {
+      showWrongPopUp();
+    }
   };
 }
 
-function checkAnswer(
-  question,
-  options,
-  questionContainer,
-  submitButton,
-  popUpTitle
-) {
+function checkAnswer(question) {
   if (document.querySelector('input[name="question"]:checked')) {
     const selectedOption = document.querySelector(
       'input[name="question"]:checked'
     ).nextSibling.innerHTML;
-    if (selectedOption === question.answer) {
-      questionContainer.removeChild(options);
-      questionContainer.removeChild(submitButton);
 
-      popUpTitle.innerHTML = "Congrats! You're moving up!";
-      const winImage = document.createElement('img');
-      const bonusMoves = popUpTitle.cloneNode(true);
-      winImage.setAttribute('src', '/assets/images/win.svg');
-      winImage.classList.add('w-1/2');
-      questionContainer.appendChild(winImage);
-      const moves = getRandomNumber();
-      bonusMoves.innerHTML = `You got ${moves} moves!`;
-      questionContainer.appendChild(bonusMoves);
-      questionContainer.appendChild(moveButton);
-      moveButton.onclick = () => {
-        move(moves);
-      };
-    } else {
-      alert('Wrong!');
-      hidePopUp();
-    }
+    return selectedOption === question.answer;
   } else {
     alert('Please select an option');
   }
+}
+
+function showCongratsMessage(
+  questionContainer,
+  options,
+  submitAnswer,
+  popUpTitle
+) {
+  questionContainer.removeChild(options);
+  questionContainer.removeChild(submitAnswer);
+
+  popUpTitle.innerHTML = "Congrats! You're moving up!";
+  const winImage = document.createElement('img');
+  const bonusMoves = popUpTitle.cloneNode(true);
+  winImage.setAttribute('src', '/assets/images/win.svg');
+  winImage.classList.add('w-1/2');
+  questionContainer.appendChild(winImage);
+  const moves = getRandomNumber();
+  bonusMoves.innerHTML = `You got ${moves} moves!`;
+  questionContainer.appendChild(bonusMoves);
+  questionContainer.appendChild(moveButton);
+  moveButton.onclick = () => {
+    move(moves);
+  };
+}
+
+function showWrongPopUp() {
+  alert('Wrong!');
+  hidePopUp();
 }
 
 addCardsToBoard(cardsArray).forEach((card) => {

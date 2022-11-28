@@ -2,12 +2,13 @@ import { move } from './game_controllers.js';
 import { moveButton } from './game_controllers.js';
 import {
   showPopUp,
-  hidePopUp,
   resetPopUP,
   getRandomNumber,
+  hidePopUp,
+  rollDice,
 } from './helper_functions.js';
 import { domElements } from './helper_objects.js';
-const { popUp } = domElements;
+const { popUp, rollDiceButton } = domElements;
 
 function addQuestionsToBoard(data) {
   const questionIndex = Math.floor(Math.random() * data.length - 1);
@@ -61,18 +62,19 @@ function getQuestion(question) {
   popUp.appendChild(questionDiv);
   showPopUp();
 
-  submitAnswer.onclick = () => {
+  submitAnswer.onclick = (e) => {
     const isAnswerCorrect = checkAnswer(question);
 
     if (isAnswerCorrect) {
-      showCongratsMessage(
+      showCongratsMessage(questionDiv, optionsList, e.target, questionTitle);
+    } else {
+      showCorrectAnswer(
         questionDiv,
         optionsList,
-        submitAnswer,
-        questionTitle
+        e.target,
+        questionTitle,
+        question
       );
-    } else {
-      showWrongPopUp();
     }
   };
 }
@@ -89,9 +91,26 @@ function checkAnswer(question) {
   }
 }
 
-function showWrongPopUp() {
-  alert('Wrong!');
-  hidePopUp();
+function showCorrectAnswer(
+  questionContainer,
+  options,
+  submitAnswer,
+  popUpTitle,
+  question
+) {
+  questionContainer.removeChild(options);
+  questionContainer.removeChild(submitAnswer);
+
+  popUpTitle.innerHTML = 'You got it wrong!';
+  const message = document.createElement('h5');
+  message.innerHTML = `The correct answer is <strong>${question.answer}</strong>`;
+  questionContainer.appendChild(message);
+  const rollDiceAgain = moveButton.cloneNode(true);
+  questionContainer.appendChild(rollDiceAgain);
+  rollDiceAgain.onclick = () => {
+    resetPopUP();
+    rollDice();
+  };
 }
 
 function showCongratsMessage(
@@ -104,11 +123,11 @@ function showCongratsMessage(
   questionContainer.removeChild(submitAnswer);
 
   popUpTitle.innerHTML = "Congrats! You're moving up!";
-  const winImage = document.createElement('img');
+  // const winImage = document.createElement('img');
   const bonusMoves = popUpTitle.cloneNode(true);
-  winImage.setAttribute('src', '/assets/images/win.svg');
-  winImage.classList.add('w-1/2');
-  questionContainer.appendChild(winImage);
+  // winImage.setAttribute('src', '/assets/images/win.svg');
+  // winImage.classList.add('w-1/2');
+  // questionContainer.appendChild(winImage);
   const moves = getRandomNumber();
   bonusMoves.innerHTML = `You got ${moves} moves!`;
   questionContainer.appendChild(bonusMoves);

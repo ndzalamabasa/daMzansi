@@ -1,5 +1,5 @@
 import { domElements } from './helper_objects.js';
-import { avatar, moveButton } from './game_controllers.js';
+import { avatar, moveButton, move } from './game_controllers.js';
 
 const { popUpContainer, popUp } = domElements;
 
@@ -46,6 +46,18 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
+function rollDice() {
+  showPopUp();
+  const dice = document.createElement('img');
+  dice.setAttribute('src', './assets/images/dice.svg');
+  dice.classList.add('h-1/2', 'w-1/2', 'animate-spin');
+  popUp.appendChild(dice);
+
+  setTimeout(() => {
+    rollDiceResults(move);
+  }, 2000);
+}
+
 function rollDiceResults(moveFunction) {
   resetPopUP();
   const moves = getRandomNumber();
@@ -81,5 +93,6 @@ export {
   addCardsToBoard,
   resetPopUP,
   getRandomNumber,
+  rollDice,
   rollDiceResults,
 };

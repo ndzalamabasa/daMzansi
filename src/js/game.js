@@ -70,36 +70,46 @@ function getQuestion(question) {
   popUp.appendChild(questionDiv);
   showPopUp();
 
-  submitAnswer.onclick = () => {
-    if (document.querySelector('input[name="question"]:checked')) {
-      const selectedOption = document.querySelector(
-        'input[name="question"]:checked'
-      ).nextSibling.innerHTML;
-      if (selectedOption === question.answer) {
-        questionDiv.removeChild(optionsList);
-        questionDiv.removeChild(submitAnswer);
-
-        questionTitle.innerHTML = "Congrats! You're moving up!";
-        const winImage = document.createElement('img');
-        const bonusMoves = questionTitle.cloneNode(true);
-        winImage.setAttribute('src', '/assets/images/win.svg');
-        winImage.classList.add('w-1/2');
-        questionDiv.appendChild(winImage);
-        const moves = getRandomNumber();
-        bonusMoves.innerHTML = `You got ${moves} moves!`;
-        questionDiv.appendChild(bonusMoves);
-        questionDiv.appendChild(moveButton);
-        moveButton.onclick = () => {
-          move(moves);
-        };
-      } else {
-        alert('Wrong!');
-        hidePopUp();
-      }
-    } else {
-      alert('Please select an option');
-    }
+  submitAnswer.onclick = (e) => {
+    checkAnswer(question, optionsList, questionDiv, e.target, questionTitle);
   };
+}
+
+function checkAnswer(
+  question,
+  options,
+  questionContainer,
+  submitButton,
+  popUpTitle
+) {
+  if (document.querySelector('input[name="question"]:checked')) {
+    const selectedOption = document.querySelector(
+      'input[name="question"]:checked'
+    ).nextSibling.innerHTML;
+    if (selectedOption === question.answer) {
+      questionContainer.removeChild(options);
+      questionContainer.removeChild(submitButton);
+
+      popUpTitle.innerHTML = "Congrats! You're moving up!";
+      const winImage = document.createElement('img');
+      const bonusMoves = popUpTitle.cloneNode(true);
+      winImage.setAttribute('src', '/assets/images/win.svg');
+      winImage.classList.add('w-1/2');
+      questionContainer.appendChild(winImage);
+      const moves = getRandomNumber();
+      bonusMoves.innerHTML = `You got ${moves} moves!`;
+      questionContainer.appendChild(bonusMoves);
+      questionContainer.appendChild(moveButton);
+      moveButton.onclick = () => {
+        move(moves);
+      };
+    } else {
+      alert('Wrong!');
+      hidePopUp();
+    }
+  } else {
+    alert('Please select an option');
+  }
 }
 
 addCardsToBoard(cardsArray).forEach((card) => {

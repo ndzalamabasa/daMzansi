@@ -34,7 +34,8 @@ function getQuestion(question) {
   const optionsList = document.createElement('ul');
   optionsList.classList.add('flex', 'flex-col', 'gap-2', 'my-4', 'self-start');
 
-  const questionButton = document.createElement('button');
+  const submitAnswer = moveButton.cloneNode(true);
+  submitAnswer.innerHTML = 'Submit Answer';
 
   questionDiv.classList.add(
     'flex',
@@ -43,20 +44,6 @@ function getQuestion(question) {
     'justify-between'
   );
   questionTitle.classList.add('text-xl', 'font-bold', 'pb-4');
-  questionButton.classList.add(
-    'bg-[url("/assets/images/btn-primary-bg.svg")]',
-    'bg-cover',
-    'rounded-xl',
-    'py-2.5',
-    'px-10',
-    'mt-8',
-    'text-xl',
-    'font-semibold',
-    'text-slate-200',
-    'hover:scale-95',
-    'transition-all',
-    'duration-200'
-  );
 
   questionTitle.innerHTML = question.question;
   questionDiv.appendChild(questionTitle);
@@ -79,19 +66,18 @@ function getQuestion(question) {
 
   questionDiv.appendChild(optionsList);
 
-  questionButton.innerHTML = 'Submit';
-  questionDiv.appendChild(questionButton);
+  questionDiv.appendChild(submitAnswer);
   popUp.appendChild(questionDiv);
   showPopUp();
 
-  questionButton.onclick = () => {
+  submitAnswer.onclick = () => {
     if (document.querySelector('input[name="question"]:checked')) {
       const selectedOption = document.querySelector(
         'input[name="question"]:checked'
       ).nextSibling.innerHTML;
       if (selectedOption === question.answer) {
         questionDiv.removeChild(optionsList);
-        questionDiv.removeChild(questionButton);
+        questionDiv.removeChild(submitAnswer);
 
         questionTitle.innerHTML = "Congrats! You're moving up!";
         const winImage = document.createElement('img');

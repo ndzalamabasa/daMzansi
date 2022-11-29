@@ -1,4 +1,4 @@
-import { move } from './game_controllers.js';
+import { move, switchTurns } from './game_controllers.js';
 import { moveButton } from './game_controllers.js';
 import {
   showPopUp,
@@ -75,6 +75,7 @@ function getQuestion(question) {
         questionTitle,
         question
       );
+      switchTurns();
     }
   };
 }

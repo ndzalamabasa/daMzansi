@@ -1,121 +1,117 @@
-import { move } from './game_controllers.js';
-import { moveButton } from './game_controllers.js';
+import { move, switchTurns } from './game_controllers.js'
+import { moveButton } from './game_controllers.js'
 import {
   showPopUp,
   hidePopUp,
   resetPopUP,
   getRandomNumber,
-} from './helper_functions.js';
-import { domElements } from './helper_objects.js';
-const { popUp } = domElements;
+} from './helper_functions.js'
+import { domElements } from './helper_objects.js'
+const { popUp } = domElements
 
 function addQuestionsToBoard(data) {
-  const questionIndex = Math.floor(Math.random() * data.length - 1);
-  const question = data[questionIndex];
+  const questionIndex = Math.floor(Math.random() * data.length - 1)
+  const question = data[questionIndex]
   if (question) {
-    getQuestion(question);
+    getQuestion(question)
   }
 }
 
 function getQuestion(question) {
-  resetPopUP();
-  const questionDiv = document.createElement('div');
-  const questionTitle = document.createElement('h3');
-  questionTitle.classList.add('text-center');
-  const optionsList = document.createElement('ul');
-  optionsList.classList.add('flex', 'flex-col', 'gap-2', 'my-4', 'self-start');
+  resetPopUP()
+  const questionDiv = document.createElement('div')
+  const questionTitle = document.createElement('h3')
+  questionTitle.classList.add('text-center')
+  const optionsList = document.createElement('ul')
+  optionsList.classList.add('flex', 'flex-col', 'gap-2', 'my-4', 'self-start')
 
-  const submitAnswer = moveButton.cloneNode(true);
-  submitAnswer.innerHTML = 'Submit Answer';
+  const submitAnswer = moveButton.cloneNode(true)
+  submitAnswer.innerHTML = 'Submit Answer'
 
   questionDiv.classList.add(
     'flex',
     'flex-col',
     'items-center',
-    'justify-between'
-  );
-  questionTitle.classList.add('text-xl', 'font-bold', 'pb-4');
+    'justify-between',
+  )
+  questionTitle.classList.add('text-xl', 'font-bold', 'pb-4')
 
-  questionTitle.innerHTML = question.question;
-  questionDiv.appendChild(questionTitle);
+  questionTitle.innerHTML = question.question
+  questionDiv.appendChild(questionTitle)
 
   question.options.forEach((option) => {
-    const questionOption = document.createElement('li');
-    const optionSelect = document.createElement('input');
-    optionSelect.classList.add('mr-2');
-    const label = document.createElement('label');
+    const questionOption = document.createElement('li')
+    const optionSelect = document.createElement('input')
+    optionSelect.classList.add('mr-2')
+    const label = document.createElement('label')
 
-    questionOption.classList.add('flex', 'items-center');
-    optionSelect.setAttribute('type', 'radio');
-    optionSelect.setAttribute('name', 'question');
-    label.innerHTML = option;
+    questionOption.classList.add('flex', 'items-center')
+    optionSelect.setAttribute('type', 'radio')
+    optionSelect.setAttribute('name', 'question')
+    label.innerHTML = option
 
-    questionOption.appendChild(optionSelect);
-    questionOption.appendChild(label);
-    optionsList.appendChild(questionOption);
-  });
+    questionOption.appendChild(optionSelect)
+    questionOption.appendChild(label)
+    optionsList.appendChild(questionOption)
+  })
 
-  questionDiv.appendChild(optionsList);
+  questionDiv.appendChild(optionsList)
 
-  questionDiv.appendChild(submitAnswer);
-  popUp.appendChild(questionDiv);
-  showPopUp();
+  questionDiv.appendChild(submitAnswer)
+  popUp.appendChild(questionDiv)
+  showPopUp()
 
   submitAnswer.onclick = () => {
-    const isAnswerCorrect = checkAnswer(question);
+    const isAnswerCorrect = checkAnswer(question)
 
     if (isAnswerCorrect) {
-      showCongratsMessage(
-        questionDiv,
-        optionsList,
-        submitAnswer,
-        questionTitle
-      );
+      showCongratsMessage(questionDiv, optionsList, submitAnswer, questionTitle)
     } else {
-      showWrongPopUp();
+      showWrongPopUp()
+      switchTurns()
     }
-  };
+  }
 }
 
 function checkAnswer(question) {
   if (document.querySelector('input[name="question"]:checked')) {
     const selectedOption = document.querySelector(
-      'input[name="question"]:checked'
-    ).nextSibling.innerHTML;
+      'input[name="question"]:checked',
+    ).nextSibling.innerHTML
 
-    return selectedOption === question.answer;
+    return selectedOption === question.answer
   } else {
-    alert('Please select an option');
+    alert('Please select an option')
   }
 }
 
 function showWrongPopUp() {
-  alert('Wrong!');
-  hidePopUp();
+  alert('Wrong!')
+  hidePopUp()
 }
 
 function showCongratsMessage(
   questionContainer,
   options,
   submitAnswer,
-  popUpTitle
+  popUpTitle,
 ) {
-  questionContainer.removeChild(options);
-  questionContainer.removeChild(submitAnswer);
+  questionContainer.removeChild(options)
+  questionContainer.removeChild(submitAnswer)
 
-  popUpTitle.innerHTML = "Congrats! You're moving up!";
-  const winImage = document.createElement('img');
-  const bonusMoves = popUpTitle.cloneNode(true);
-  winImage.setAttribute('src', '/assets/images/win.svg');
-  winImage.classList.add('w-1/2');
-  questionContainer.appendChild(winImage);
-  const moves = getRandomNumber();
-  bonusMoves.innerHTML = `You got ${moves} moves!`;
-  questionContainer.appendChild(bonusMoves);
-  questionContainer.appendChild(moveButton);
+  popUpTitle.innerHTML = "Congrats! You're moving up!"
+  const winImage = document.createElement('img')
+  const bonusMoves = popUpTitle.cloneNode(true)
+  winImage.setAttribute('src', '/assets/images/win.svg')
+  winImage.classList.add('w-1/2')
+  questionContainer.appendChild(winImage)
+  const moves = getRandomNumber()
+  bonusMoves.innerHTML = `You got ${moves} moves!`
+  questionContainer.appendChild(bonusMoves)
+  questionContainer.appendChild(moveButton)
   moveButton.onclick = () => {
-    move(moves);
-  };
+    move(moves)
+  }
 }
 
-export { addQuestionsToBoard };
+export { addQuestionsToBoard }

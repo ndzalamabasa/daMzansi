@@ -119,5 +119,40 @@
       "none of the above"
     ],
     "answer": "Nguni,Sotho,Shangaan-Tsonga,Venda"
+  },
+  {
+    "id": 17,
+    "question": "Which language does the phrase Umuntu ngumuntu ngabantu originate from?",
+    "options": ["Xhosa", "Swati", "Zulu", "Ndebele"],
+    "answer": "Zulu"
+  },
+  {
+    "id": 18,
+    "question": "What does the phrase “danko” mean?",
+    "options": ["Hi", "Good morning", "Thank You", "You're Welcome"],
+    "answer": "Thank You"
+  },
+  {
+    "id": 19,
+    "quesions": "What South African movie won an Oscar for best foreign film?",
+    "options": ["Umlazi Gangster", "Tsotsi", "Mvubu The Hippo", "Lion King"],
+    "answer": "Tsotsi"
+  },
+  {
+    "id": 20,
+    "quesions": "Where and when was gold discovered before the Gold Rush?",
+    "options": [
+      "Transvaal farm",
+      "Phalaphala Farm",
+      "Bergsig Trout Farm",
+      "Gnu Valley Farm"
+    ],
+    "answer": "Transvaal farm"
+  },
+  {
+    "id": 21,
+    "quesions": "The world largest open cast mine is found in this town/city?",
+    "options": ["Durban", "Johannesburg", "Kimberly", " Worcester"],
+    "answer": "Kimberly"
   }
 ]

@@ -19,7 +19,7 @@ addCardsToBoard(cardsArray).forEach((card) => {
 function rollDice() {
   console.log(avatar)
   avatar.setAttribute('src', user.userAvatar)
-  // user.setUserAvatar(avatarArray[user.playerTurn])
+
   showPopUp()
   const dice = document.createElement('img')
   dice.setAttribute('src', './assets/images/dice.svg')

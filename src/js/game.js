@@ -1,5 +1,5 @@
 import { avatarArray } from './avatarArray.js'
-import { cardsArray, move, user } from './game_controllers.js'
+import { avatar, cardsArray, move, user } from './game_controllers.js'
 import {
   showPopUp,
   addCardsToBoard,
@@ -9,6 +9,7 @@ import { domElements } from './helper_objects.js'
 const { board, popUp, rollDiceButton } = domElements
 let userAvatar = new URLSearchParams(window.location.search).get('avatar')
 
+// user.setUserAvatar()
 rollDiceButton.addEventListener('click', rollDice)
 
 addCardsToBoard(cardsArray).forEach((card) => {
@@ -16,12 +17,15 @@ addCardsToBoard(cardsArray).forEach((card) => {
 })
 
 function rollDice() {
+  console.log(avatar)
+  avatar.setAttribute('src', user.userAvatar)
+  // user.setUserAvatar(avatarArray[user.playerTurn])
   showPopUp()
   const dice = document.createElement('img')
   dice.setAttribute('src', './assets/images/dice.svg')
   dice.classList.add('h-1/2', 'w-1/2', 'animate-spin')
   popUp.appendChild(dice)
-  user.setUserAvatar(avatarArray[user.playerTurn])
+
   setTimeout(() => {
     rollDiceResults(move)
   }, 2000)

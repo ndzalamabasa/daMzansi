@@ -1,10 +1,11 @@
-import { move, switchTurns } from './game_controllers.js'
+import { move, switchTurns, user } from './game_controllers.js'
 import { moveButton } from './game_controllers.js'
 import {
   showPopUp,
   hidePopUp,
   resetPopUP,
   getRandomNumber,
+  showWhosTurn,
 } from './helper_functions.js'
 import { domElements } from './helper_objects.js'
 const { popUp } = domElements
@@ -69,6 +70,7 @@ function getQuestion(question) {
     } else {
       showWrongPopUp()
       switchTurns()
+      showWhosTurn()
     }
   }
 }

@@ -4,12 +4,13 @@ import {
   showPopUp,
   addCardsToBoard,
   rollDiceResults,
+  showWhosTurn,
 } from './helper_functions.js'
 import { domElements } from './helper_objects.js'
 const { board, popUp, rollDiceButton } = domElements
-let userAvatar = new URLSearchParams(window.location.search).get('avatar')
 
-// user.setUserAvatar()
+showWhosTurn()
+
 rollDiceButton.addEventListener('click', rollDice)
 
 addCardsToBoard(cardsArray).forEach((card) => {
@@ -17,7 +18,6 @@ addCardsToBoard(cardsArray).forEach((card) => {
 })
 
 function rollDice() {
-  console.log(avatar)
   avatar.setAttribute('src', user.userAvatar)
 
   showPopUp()

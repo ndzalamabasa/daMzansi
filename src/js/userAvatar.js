@@ -23,4 +23,16 @@ export class UserProfile {
   setUserAvatar() {
     this.avatarSettings.setAttribute('src', this.userAvatar)
   }
+  userTurnIndicator() {
+    const playerAvatarProps = document.createElement('img')
+    playerAvatarProps.classList.add(
+      'absolute',
+      'top-2.5',
+      'right-3.5',
+      'h-20',
+      'w-20',
+    )
+    playerAvatarProps.setAttribute('src', this.userAvatar)
+    return playerAvatarProps
+  }
 }

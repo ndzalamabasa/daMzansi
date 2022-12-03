@@ -1,5 +1,5 @@
 import { domElements } from './helper_objects.js'
-import { avatar, moveButton } from './game_controllers.js'
+import { avatar, moveButton, user } from './game_controllers.js'
 
 const { popUpContainer, popUp } = domElements
 
@@ -74,6 +74,10 @@ function rollDiceResults(moveFunction) {
   }
 }
 
+function showWhosTurn() {
+  domElements.showPlayerTurn.appendChild(user.userTurnIndicator())
+}
+
 export {
   getQuestions,
   showPopUp,
@@ -82,4 +86,5 @@ export {
   resetPopUP,
   getRandomNumber,
   rollDiceResults,
+  showWhosTurn,
 }

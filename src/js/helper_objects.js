@@ -3,6 +3,7 @@ const domElements = {
   popUp: document.getElementById('pop-up'),
   rollDiceButton: document.getElementById('roll-dice'),
   board: document.getElementById('board'),
-};
+  showPlayerTurn: document.getElementById('showPlayerTurn'),
+}
 
-export { domElements };
+export { domElements }

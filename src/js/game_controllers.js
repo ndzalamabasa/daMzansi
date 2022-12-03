@@ -4,8 +4,7 @@ import { addQuestionsToBoard } from './questions.js'
 import { domElements } from './helper_objects.js'
 import { avatarArray } from './avatarArray.js'
 
-const userName = new URLSearchParams(window.location.search).get('user')
-const users = new URLSearchParams(window.location.search).get('list') // added
+const users = new URLSearchParams(window.location.search).get('list')
 const { rollDiceButton } = domElements
 const moveButton = rollDiceButton.cloneNode(true)
 const cardsPath = './assets/images/cards/'
@@ -62,7 +61,6 @@ function move(numberOfMoves) {
     : (user.position = user.position + numberOfMoves)
 
   user.positionUser(avatars[user.playerTurn])
-  console.log(user)
 
   setTimeout(() => {
     getQuestions().then((questions) => {

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": "Where is Africa's largest hospital located?",
+    "question": "Where is the largest hospital in the world located?",
     "options": ["Kimberly", "Soweto", "Cape Town", "Sandton"],
     "answer": "Soweto"
   },
@@ -79,12 +79,12 @@
     "id": 12,
     "question": "The Kruger National Park contains the 'Big 5' of wild animals; which five animals make up this 'Big 5'?",
     "options": [
-      "Lions, leopards, rhinos, elephants and buffalos",
+      "Lions, cheetars, rhinos, elephants and buffalos",
       "Springboks, leopards, rhinos, elephants and buffalos",
       "Lions, leopards, rhinos, Springboks and buffalos",
-      "Tigers, cheetars, rhinos, elephants and buffalos"
+      "Tigers, leopards, rhinos, elephants and buffalos"
     ],
-    "answer": "Lions, leopards, rhinos, elephants and buffalos"
+    "answer": "Lions, cheetars, rhinos, elephants and buffalos"
   },
   {
     "id": 13,
@@ -119,5 +119,101 @@
       "none of the above"
     ],
     "answer": "Nguni,Sotho,Shangaan-Tsonga,Venda"
+  },
+  {
+    "id": 17,
+    "question": "Which language does the phrase Umuntu ngumuntu ngabantu originate from?",
+    "options": ["Xhosa", "Swati", "Zulu", "Ndebele"],
+    "answer": "Zulu"
+  },
+  {
+    "id": 18,
+    "question": "What does the phrase “danko” mean?",
+    "options": ["Hi", "Good morning", "Thank You", "You're Welcome"],
+    "answer": "Thank You"
+  },
+  {
+    "id": 19,
+    "question": "What South African movie won an Oscar for best foreign film?",
+    "options": ["Umlazi Gangster", "Tsotsi", "Mvubu The Hippo", "Lion King"],
+    "answer": "Tsotsi"
+  },
+  {
+    "id": 20,
+    "question": "Where and when was gold discovered before the Gold Rush?",
+    "options": [
+      "Transvaal farm",
+      "Phalaphala Farm",
+      "Bergsig Trout Farm",
+      "Gnu Valley Farm"
+    ],
+    "answer": "Transvaal farm"
+  },
+  {
+    "id": 21,
+    "question": "The world largest open cast mine is found in this town/city?",
+    "options": ["Durban", "Johannesburg", "Kimberly", " Worcester"],
+    "answer": "Kimberly"
+  },
+  {
+    "id": 22,
+    "question": "Name The biggest Game Reserve located in Mpumalanga with all the big five animals at one vicinity?",
+    "options": [
+      "Sabi sands",
+      "Kruger National Park",
+      "Kapama game reserve",
+      "Aquila Game reserve"
+    ],
+    "answer": "Kruger National Park"
+  },
+  {
+    "id": 23,
+    "question": "The biggest Taxi Interchange Rank in the continent?",
+    "options": [
+      "MTN Rank",
+      "Baragwanath Rank",
+      "Durban Taxi Rank",
+      "Monty Naicker Rank"
+    ],
+    "answer": "MTN Rank"
+  },
+  {
+    "id": 24,
+    "question": "2 Nobel Peace Prize Laureates lived in this street and it is now a well renowned heritage site..which street is it ?",
+    "options": [
+      "Vilakazi Street",
+      "Long Street",
+      "Victoria Embankmen",
+      "Diagonal Street"
+    ],
+    "answer": "Vilakazi Street"
+  },
+  {
+    "id": 25,
+    "question": "The slang word for BunnyChow?",
+    "options": ["Quota", "Ndwang", "Plate", "Sphahlo"],
+    "answer": "Spahlo"
+  },
+  {
+    "id": 26,
+    "question": "Name the state broadcaster and one other free to air broadcaster, both I formally known as “4 Channels”?",
+    "options": [
+      "Yfm and Metro",
+      "Soweto TV and Moja Love",
+      "SABC and Etv",
+      "none of the above"
+    ],
+    "answer": "SABC and Etv"
+  },
+  {
+    "id": 27,
+    "question": "The world’s highest bunjee jumping spot is found on this structure?",
+    "options": [
+      "Mandela Bridge",
+      "Brudge WC",
+      "Moses Mabhida",
+      "Soweto Towers"
+    ],
+    "answer": "Soweto Towers"
   }
 ]

@@ -55,10 +55,13 @@ function move(numberOfMoves) {
     let moreThan50 = user.position + numberOfMoves
     moreThan50 = moreThan50 - 50
     user.position = user.position - moreThan50
+    user.positionUser(avatars[user.playerTurn])
+    console.log(user.position)
   }
-  user.position == 50
-    ? alert('You Win')
-    : (user.position = user.position + numberOfMoves)
+  if (user.position == 50) {
+    alert('You Win')
+  }
+  user.position = user.position + numberOfMoves
 
   user.positionUser(avatars[user.playerTurn])
 

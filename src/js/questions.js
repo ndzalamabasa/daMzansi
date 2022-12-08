@@ -5,10 +5,10 @@ import {
   resetPopUP,
   getRandomNumber,
   hidePopUp,
-  rollDice,
+  
 } from './helper_functions.js';
 import { domElements } from './helper_objects.js';
-const { popUp, rollDiceButton } = domElements;
+const { popUp } = domElements;
 
 function addQuestionsToBoard(data) {
   const questionIndex = Math.floor(Math.random() * data.length - 1);
@@ -109,8 +109,7 @@ function showCorrectAnswer(
   const rollDiceAgain = moveButton.cloneNode(true);
   questionContainer.appendChild(rollDiceAgain);
   rollDiceAgain.onclick = () => {
-    resetPopUP();
-    rollDice();
+    hidePopUp()
   };
 }
 

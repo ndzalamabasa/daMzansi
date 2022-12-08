@@ -4,6 +4,7 @@ import { addQuestionsToBoard } from './questions.js';
 import { domElements } from './helper_objects.js';
 import { avatarArray } from './avatarArray.js';
 
+const whosTurnIsIt = document.getElementById("whosTurnIsIt")
 const users = new URLSearchParams(window.location.search).get('list'); // added
 const { rollDiceButton } = domElements;
 const moveButton = rollDiceButton.cloneNode(true);
@@ -37,6 +38,10 @@ function switchTurns() {
   user = userToTurn;
   i++;
   if (i === userKeys.length) i = 0;
+  avatar = user.avatarSettings
+  user.setUserAvatar()
+  user.indicateUserTurn()
+  // whosTurnIsIt.innerHTML = `${user.userName}'s Turn`
 }
 switchTurns();
 
@@ -50,7 +55,7 @@ cardsLetters.forEach((letter) => {
 
 function move(numberOfMoves) {
   hidePopUp();
-
+  
   if (user.position + numberOfMoves > 50) {
     let moreThan50 = user.position + numberOfMoves;
     moreThan50 = moreThan50 - 50;

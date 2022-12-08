@@ -1,5 +1,5 @@
 import { domElements } from './helper_objects.js';
-import { avatar, moveButton, move } from './game_controllers.js';
+import { avatar, moveButton, move, user } from './game_controllers.js';
 
 const { popUpContainer, popUp } = domElements;
 
@@ -39,7 +39,7 @@ function addCardsToBoard(cardsArray) {
     cards.push(cardDiv);
   });
 
-  return cards;
+  return cards.reverse();
 }
 
 function getRandomNumber() {
@@ -47,6 +47,7 @@ function getRandomNumber() {
 }
 
 function rollDice() {
+  console.log(user)
   showPopUp();
   const dice = document.createElement('img');
   dice.setAttribute('src', './assets/images/dice.svg');

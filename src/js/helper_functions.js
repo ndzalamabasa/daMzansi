@@ -26,7 +26,7 @@ function addCardsToBoard(cardsArray) {
   const cards = [];
   let id = 1;
 
-  cardsArray.forEach((card) => {
+  cardsArray.forEach((card,index) => {
     const cardDiv = document.createElement('div');
     const cardImage = document.createElement('img');
 
@@ -35,7 +35,7 @@ function addCardsToBoard(cardsArray) {
     cardImage.setAttribute('src', card);
     cardDiv.appendChild(cardImage);
     id++;
-
+    // if(id)
     cards.push(cardDiv);
   });
 
@@ -76,7 +76,7 @@ function rollDiceResults(moveFunction) {
     'h-12',
     'w-12'
   );
-  resultAvatar.classList.add('h-2/4', 'w-2/4');
+  // resultAvatar.classList.add('h-2/4', 'w-2/4');
 
   popUp.appendChild(resultAvatar);
   popUp.appendChild(results);

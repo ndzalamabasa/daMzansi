@@ -15,11 +15,14 @@
       >
         Roll Dice
       </button>
-      <div id="whosTurnIsIt"></div>
+      <!-- at the top -->
+
+      <!-- board -->
       <div
-        class="board bg-green-800 shadow-xl shadow-slate-500 grid grid-cols-10 grid-rows-5 justify-items-center items-center gap-3 rounded-xl p-8 h-screen"
+        class="board bg-green-800 shadow-xl shadow-slate-500 grid grid-cols-10 grid-rows-5 justify-items-center items-center gap-1 rounded-xl p-2"
         id="board"
       ></div>
+      <!-- container -->
       <div
         id="pop-up-container"
         class="pop-up absolute w-screen top-0 left-0 h-screen shadow-lg hidden"
@@ -29,8 +32,17 @@
           id="pop-up"
         ></div>
       </div>
+      <!-- sidebarTing  -->
+      <div
+        id="gameStats"
+        class="board text-white bg-green-800 shadow-xl roundex-xl p-3"
+      >
+        <div id="whosTurnIsIt"></div>
+        <div id="nowPlaying" class="absolute, right-15, h-20, w-20">sad</div>
+      </div>
       <div id="usersArray"></div>
     </main>
+
     <script src="./js/game.js"></script>
   </body>
 </html>

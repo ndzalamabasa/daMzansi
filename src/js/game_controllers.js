@@ -32,8 +32,26 @@ users.split(",").forEach((profile, index) => {
   usersObject[profileNameAndAvatar[0]].displayGameStats(domElements);
 });
 
+// console.log(usersObject.sort(a,b) => return a.userName < b.userName);
+// console.log(usersObject);
+
+// const sortable = Object.fromEntries(
+// Object.entries(usersObject).sort((a, b) => a - b)
+// );
+// console.log(sortable);
+// let sortable = [];
+// for (let player of usersObject[player]) {
+//   sortable.push([player, usersObject[player]]);
+// }
+// sortable.sort(function (a, b) {
+//   return a[2] - b[2];
+// });
+
+// console.log(sortable);
+
 let i = 0;
 let userKeys = Object.keys(usersObject);
+
 function switchTurns() {
   const userToTurn = usersObject[userKeys[i]];
   user = userToTurn;
@@ -42,6 +60,16 @@ function switchTurns() {
   avatar = user.avatarSettings;
   user.setUserAvatar();
   user.indicateUserTurn();
+  //
+  //
+  //
+
+  const arrObject = usersObject;
+  console.log(arrObject);
+
+  //
+  //
+  //
 }
 switchTurns();
 

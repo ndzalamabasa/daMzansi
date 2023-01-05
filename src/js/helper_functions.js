@@ -47,7 +47,7 @@ function getRandomNumber() {
 }
 
 function rollDice() {
-  console.log(user);
+  domElements.myAudio.play();
   showPopUp();
   const dice = document.createElement("img");
   dice.setAttribute("src", "./assets/images/dice.svg");

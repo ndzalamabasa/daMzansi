@@ -4,6 +4,7 @@ const domElements = {
   rollDiceButton: document.getElementById("roll-dice"),
   board: document.getElementById("board"),
   gameStats: document.getElementById("gameStats"),
+  myAudio: document.getElementById("myAudio"),
 };
 
 export { domElements };
